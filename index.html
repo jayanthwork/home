@@ -1,28 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Jayanth's Blog</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Jayanth's Blog</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+---
+layout: default
+---
 
-  <main>
-    <h2>Welcome!</h2>
-    <p>This is my personal blog where I share my learning, skills, experiences, and resume.</p>
-    <a class="button" href="blog.html">See Blog Posts →</a>
-  </main>
+<div class="home">
+  <div class="hero">
+    <h1 class="hero-title">Welcome to My Blog</h1>
+    <p class="hero-subtitle">Sharing thoughts on technology, life, and creativity</p>
+  </div>
 
-  <footer>
-    &copy; 2025 Jayanth Chennamsetti
-  </footer>
-</body>
-</html>
+  <section class="posts-section">
+    <h2>Latest Posts</h2>
+    <div class="posts-grid">
+      {% for post in site.posts limit:6 %}
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+          </div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</div>

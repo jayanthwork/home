@@ -1,4 +1,32 @@
-title: Jayanth's Blog
-theme: minima
-url: "https://jayanthwork.github.io"
-baseurl: ""  # ← This must be empty for user/organisation sites
+title: Your Personal Blog
+email: your-email@example.com
+description: A modern personal blog about technology, life, and everything in between.
+baseurl: ""
+url: "https://yourusername.github.io"
+twitter_username: yourusername
+github_username: yourusername
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

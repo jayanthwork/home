@@ -1,2 +1,4 @@
 title: Jayanth's Blog
 theme: minima
+url: "https://jayanthwork.github.io"
+baseurl: ""  # ← This must be empty for user/organisation sites

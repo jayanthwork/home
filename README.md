@@ -1,2 +1,0 @@
-# jayanth
-My Personal blog
